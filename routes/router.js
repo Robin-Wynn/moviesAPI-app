@@ -10,7 +10,7 @@ router.get('/api', (req, res)=> {
     })
 })
 
-router.use('/api/movie', require('./api/movieRoutes'))
+router.use('/api/movie', require('./api/movieRoute'))
 
 // Error handling
 router.use((req, res, next)=> {
