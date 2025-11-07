@@ -4,7 +4,8 @@ const { movieDao: dao } = require('../../daos/dao')
 
 // http://localhost:1995/api/movie
 router.get('/', (req, res)=> {
-    dao.findAll(req, res, dao.table) //req would be needed for pagination
+    // dao.findAll(req, res, dao.table) //req would be needed for pagination
+    dao.findMovieInfo(res, dao.table)
 })
 
 router.get('/sort/:sorter', (req, res)=> {
