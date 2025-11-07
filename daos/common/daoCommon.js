@@ -9,7 +9,9 @@ const daoCommon = {
 		// .query(sql query, callback func)
 		connect.query(
 	        `SELECT * FROM ${table};`,
-	        queryAction(res, error, rows, table)
+			(error, rows)=> {
+				queryAction(res, error, rows, table)
+			}
         )
     },
 
