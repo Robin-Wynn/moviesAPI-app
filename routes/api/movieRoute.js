@@ -8,6 +8,11 @@ router.get('/', (req, res)=> {
     dao.findMovieInfo(res, dao.table)
 })
 
+// http://localhost:1995/api/movie/get_movies/3
+router.get('/get_movies/:id', (req, res)=> {
+    dao.findMovieByActorId(res, dao.table, req.params.id)
+})
+
 router.get('/sort/:sorter', (req, res)=> {
     dao.sort(res, dao.table, req.params.sorter)
 })

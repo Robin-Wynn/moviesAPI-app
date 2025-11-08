@@ -4,6 +4,7 @@ const { queryAction } = require('../../helpers/queryAction')
 const movieDao = {
 
     table: 'movie',
+    actorTable: 'actor',
 
     findMovieInfo: (res, table)=> {
 
@@ -21,8 +22,21 @@ const movieDao = {
 		    }
 	    )
 
-    }
+    },
 
+    // findMovieByActorId: (res, table, id)=> {
+
+    //     const sql = `SELECT title FROM ${table}, a.actor_id, a.first_name, a.last_name WHERE a.actor_id = ${id}
+    //     FROM ${actorTable};`
+
+    //     con.query(
+    //         sql,
+    //         (error, rows)=> {
+    //             queryAction(res, error, rows, table)
+    //         }
+    //     )
+
+    // }
 
 }
 
