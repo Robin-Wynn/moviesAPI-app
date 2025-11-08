@@ -6,11 +6,25 @@ const PORT = process.env.PORT || 1995
 router.get('/api', (req, res)=> {
     // res.send('movie api')
     res.json({
-        'All Movies': `http://localhost:${PORT}/api/movie`
+        'All Movies': `http://localhost:${PORT}/api/movie`,
+        "All Actors": `http://localhost:${PORT}/api/actor`
     })
 })
 
-router.use('/api/movie', require('./api/movieRoute'))
+// endpoints
+const endpoints = [
+    'movie',
+    'actor'
+]
+
+endpoints.forEach(endpoint => {
+    router.use(`/api/${endpoint}`, require(`./api/${endpoint}Route`))
+})
+
+// //add movie endpoint
+// router.use('/api/movie', require('./api/movieRoute'))
+// //Add actor endpoint
+// router.use('/api/actor', require('./api/actorRoute'))
 
 // Error handling
 router.use((req, res, next)=> {
