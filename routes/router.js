@@ -9,7 +9,13 @@ router.get('/api', (req, res)=> {
         'All Movies': `http://localhost:${PORT}/api/movie`,
         "All Actors": `http://localhost:${PORT}/api/actor`,
         "All Genres": `http://localhost:${PORT}/api/genre`,
-        "All Directors": `http://localhost:1995/api/director`
+        "All Directors": `http://localhost:1995/api/director`,
+        "Movie to Actors": `http://localhost:1995/api/movie_to_actor`,
+        "Movie to Directors": `http://localhost:1995/api/movie_to_director`,
+        "Movie to Genres": `http://localhost:1995/api/movie_to_genre`,
+        "Movie to Streaming": `http://localhost:1995/api/movie_to_streaming`,
+        "Production": `http://localhost:1995/api/production`,
+        "Streaming Platform": `http://localhost:1995/api/streaming_platform`
 
     })
 })
@@ -19,7 +25,13 @@ const endpoints = [
     'movie',
     'actor',
     'genre',
-    'director'
+    'director',
+    'movie_to_actor',
+    'movie_to_director',
+    'movie_to_genre',
+    'movie_to_streaming',
+    'production',
+    'streaming_platform'
 ]
 
 endpoints.forEach(endpoint => {
