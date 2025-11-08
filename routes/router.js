@@ -7,14 +7,19 @@ router.get('/api', (req, res)=> {
     // res.send('movie api')
     res.json({
         'All Movies': `http://localhost:${PORT}/api/movie`,
-        "All Actors": `http://localhost:${PORT}/api/actor`
+        "All Actors": `http://localhost:${PORT}/api/actor`,
+        "All Genres": `http://localhost:${PORT}/api/genre`,
+        "All Directors": `http://localhost:1995/api/director`
+
     })
 })
 
 // endpoints
 const endpoints = [
     'movie',
-    'actor'
+    'actor',
+    'genre',
+    'director'
 ]
 
 endpoints.forEach(endpoint => {

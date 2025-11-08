@@ -10,7 +10,19 @@ const actorDao = {
     ...require('./api/actorDao')
 }
 
+const genreDao = {
+    ...daoCommon,
+    ...require('./api/genreDao')
+}
+
+const directorDao = {
+    ...daoCommon,
+    ...require('./api/directorDao')
+}
+
 module.exports = {
     movieDao,
-    actorDao
+    actorDao,
+    genreDao,
+    directorDao
 }
