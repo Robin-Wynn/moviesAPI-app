@@ -5,6 +5,36 @@ const movieDao = {
 
     table: 'movie',
 
+    
+
+    findMovieInfo: (res, table)=> {
+
+        let sql = `
+        SELECT 
+            m.movie_id, 
+            m.title, 
+            m.rating, 
+            m.runtime, 
+            m.nationality, 
+            m.yr_released, 
+            m.budget,
+            m.gross,
+            m.showing,
+            p.production AS production_company,
+            GROUP_CONCAT(DISTINCT g.genre SEPARATOR ', ') AS genres 
+        FROM movie m
+        JOIN production p ON m.production_id = p.production_id
+        JOIN movie_to_genre mtg ON m.movie_id = mtg.movie_id
+        JOIN genre g ON mtg.genre_id = g.genre_id
+        GROUP BY m.movie_id
+        ;`
+
+        con.query(sql, (error, rows) => {
+            queryAction(res, error, rows, table)
+        })
+    }
+
+    // 🍿🍿🍿🍿🍿🍿🍿🍿🍿🍿🍿🍿🍿👇🏼👇🏼👇🏼👇🏼👇🏼 saving for later
     // findMovieByActorId: (res, table, actorId)=> {
         
     //     let params = []
@@ -55,34 +85,7 @@ const movieDao = {
 		// 	}
 		// )
        
-    // },
-
-    findMovieInfo: (res, table)=> {
-
-        let sql = `
-        SELECT 
-            m.movie_id, 
-            m.title, 
-            m.rating, 
-            m.runtime, 
-            m.nationality, 
-            m.yr_released, 
-            m.budget,
-            m.gross,
-            m.showing,
-            p.production AS production_company,
-            GROUP_CONCAT(DISTINCT g.genre SEPARATOR ', ') AS genres 
-        FROM movie m
-        JOIN production p ON m.production_id = p.production_id
-        JOIN movie_to_genre mtg ON m.movie_id = mtg.movie_id
-        JOIN genre g ON mtg.genre_id = g.genre_id
-        GROUP BY m.movie_id
-        ;`
-
-        con.query(sql, (error, rows) => {
-            queryAction(res, error, rows, table)
-        })
-    }
+    // }
 
 }
 

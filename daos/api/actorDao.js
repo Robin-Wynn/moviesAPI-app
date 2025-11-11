@@ -4,9 +4,9 @@ const { queryAction } = require('../../helpers/queryAction')
 const actorDao = {
 	table: 'actor',
 	
-	// Find movies by actor name or ID
+	// Find movies by actor name or ID 
     findMoviesByActor: (res, table, nameOrId) => {
-        // We'll detect whether user passed a number (id) or string   (name)
+        // We'll detect whether user passed a number (id) or string (name) 💡
         const isId = !isNaN(nameOrId)
         let sql = ''
         let params = []   
@@ -39,7 +39,7 @@ const actorDao = {
                 WHERE REPLACE(LOWER(CONCAT(a.first_name, a.last_name)), ' ', '') LIKE LOWER(?)
                 GROUP BY a.actor_id;
             `
-            params = [`%${nameOrId}%`]  //will allow partial matches like reesewitherspoon or reese
+            params = [`%${nameOrId}%`]  //will allow partial matches like reesewitherspoon or reese ❤️
         } 
         con.execute(sql, params, (error, rows) => {
             queryAction(res, error, rows, table)
