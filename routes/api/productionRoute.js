@@ -6,6 +6,10 @@ router.get('/', (req, res)=> {
     dao.findAll(req, res, dao.table) //req would be needed for pagination
 })
 
+router.get('/findInfo/:id', (req, res)=> {
+    dao.findProductionInfo(res, dao.table)
+})
+
 // http://localhost:1995/api/production/sort/:sort
 router.get('/sort/:sorter', (req, res)=> {
     dao.sort(res, dao.table, req.params.sorter)
