@@ -6,6 +6,11 @@ router.get('/', (req, res)=> {
     dao.findAll(req, res, dao.table) //req would be needed for pagination
 })
 
+// http://localhost:1995/api/movie_to_actor/find/20
+router.get('/find/:movieKey', (req, res)=> {
+    dao.findActorsByMovie(res, dao.table, req.params.movieKey)
+})
+
 // http://localhost:1995/api/movie_to_actor/sort/:sort
 router.get('/sort/:sorter', (req, res)=> {
     dao.sort(res, dao.table, req.params.sorter)
