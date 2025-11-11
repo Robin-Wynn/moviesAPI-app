@@ -7,11 +7,11 @@ const queryAction =(obj, e, r, t)=> {
 			obj.json(r)
 		}
 	} else {
-		console.log(`Dao Error: ${e}`)
+		console.log(`${t}Dao Error: ${e}`)
 		obj.json({
 			"message": 'error',
-			'table': `${t}`,
-			'error': error
+			"table": `${t}`,
+			"error": e
 		})
 	}
 }
