@@ -1,0 +1,32 @@
+<%- include('../partials/header') %>
+
+    <main class="main" id="main">
+
+        <h1 class="display-1 text-center text-capitalize">
+            <%= title %>
+        </h1>
+
+        <div class="container movie-grid">
+
+            <div class="row row-cols-2 row-cols-md-4 row-cols-lg-6 g-3" id="movieRow">
+
+                <% movies.forEach(movie => { %>
+                    
+                    <div class="col">
+    
+                        <div class="card h-100" id="movieCard"></div>
+    
+                    </div>
+    
+                <% }) %>
+
+            </div>
+
+
+        </div>
+
+
+
+    </main>
+
+<%- include('../partials/footer') %>

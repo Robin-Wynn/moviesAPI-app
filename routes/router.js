@@ -2,6 +2,22 @@ const express = require('express')
 const router = express.Router()
 const PORT = process.env.PORT || 1995
 
+// Home Page => http://localhost:1995
+router.get('/', (req, res)=> {
+    res.render('pages/home', {
+        title: 'Movie App Home',
+        name: 'Robin\'s Movie App🎬'
+    })
+})
+
+// Actor-Form => http://localhost:1995/actor-form
+router.get('/actor-form', (req, res)=> {
+    res.render('pages/actor-form', {
+        title: 'actor-form',
+        name: 'actor-form'
+    })
+})
+
 // root route 
 router.get('/api', (req, res)=> {
     // res.send('movie api')
