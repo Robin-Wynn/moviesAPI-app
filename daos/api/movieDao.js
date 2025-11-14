@@ -5,8 +5,6 @@ const movieDao = {
 
     table: 'movie',
 
-    
-
     findMovieInfo: (res, table)=> {
 
         let sql = `
