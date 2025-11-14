@@ -13,6 +13,11 @@ router.get('/get_movies_info', (req, res)=> {
     dao.findMovieInfo(res, dao.table)
 })
 
+// http://localhost:1995/api/movie/actorMovie/:nameOrId
+router.get('/actorMovie/:nameOrId', (req, res)=> {
+    dao.findMoviesByActor(res, dao.table, req.params.nameOrId)
+})
+
 // // http://localhost:1995/api/movie/actor/:actorId
 // router.get('/actor/:actorId', (req, res)=> {
 //     dao.findMovieByActorId(res, dao.table, req.params.actorId)
