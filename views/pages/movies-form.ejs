@@ -1,0 +1,139 @@
+<%- include('../partials/header') %>
+
+<main class="main" id="main">
+
+    <div class="container">
+        <h2 class="text-center text-capitalize">Add a Movie 🎬</h2>
+
+        <form 
+            action="http://localhost:1995/movie-form" 
+            method="post"
+            class="form"
+            id="movieForm"    
+        >
+        
+            <div class="row mb-3">
+                <div class="col">
+                    <label 
+                        for="title"    
+                        class="form-label">
+                        Title:
+                    </label>
+                    <input 
+                        type="text" 
+                        name="title" 
+                        id="title"
+                        class="form-control"
+                    />
+                </div>
+                <div class="col">
+                    <label 
+                        for="rating"    
+                        class="form-label">
+                        Rating:
+                    </label>
+                    <input 
+                        type="text" 
+                        name="rating" 
+                        id="rating"
+                        class="form-control"
+                        placeholder="('G', 'PG', 'PG-13', 'R', 'NC-17', 'NR')"
+                    />
+                </div>
+                <div class="col">
+                    <label 
+                        for="runtime"    
+                        class="form-label">
+                        Runtime:
+                    </label>
+                    <input 
+                        type="text" 
+                        name="runtime" 
+                        id="runtime"
+                        class="form-control"
+                        placeholder="runtime"
+                    />
+                </div>
+                <div class="col">
+                    <label 
+                        for="nationality"    
+                        class="form-label">
+                        Nationality:
+                    </label>
+                    <input 
+                        type="text" 
+                        name="nationality" 
+                        id="nationality"
+                        class="form-control"
+                        placeholder="USA or other"
+                    />
+                </div>
+                <div class="col">
+                    <label 
+                        for="yr_released"    
+                        class="form-label">
+                        Year Released:
+                    </label>
+                    <input 
+                        type="text" 
+                        name="yr_released" 
+                        id="yr_released"
+                        class="form-control"
+                    />
+                </div>
+                <div class="col">
+                    <label 
+                        for="budget"    
+                        class="form-label">
+                        Budget:
+                    </label>
+                    <input 
+                        type="text" 
+                        name="budget" 
+                        id="budget"
+                        class="form-control"
+                    />
+                </div>
+                <div class="col">
+                    <label 
+                        for="showing"    
+                        class="form-label">
+                        Showing:
+                    </label>
+                    <input 
+                        type="text" 
+                        name="showing" 
+                        id="showing"
+                        class="form-control"
+                        placeholder="('theater' or 'direct-to-tv')"
+                    />
+                </div>
+                <div class="col">
+                    <label 
+                        for="poster"    
+                        class="form-label">
+                        Movie Poster:
+                    </label>
+                    <input 
+                        type="image"
+                        name="poster" 
+                        id="poster"
+                        class="form-control"
+                        placeholder="jpg image"
+                    />
+                </div>
+            </div>
+
+            <button 
+                class="btn btn-primary"
+                type="submit"
+                role="button"
+            >Add Movie</button>
+
+        </form>
+
+    </div>
+
+</main>
+
+<%- include('../partials/footer') %>

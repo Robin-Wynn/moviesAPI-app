@@ -6,26 +6,64 @@
             <%= title %>
         </h1>
 
-        <div class="container movie-grid">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+        
+            <a class="navbar-brand" href="/">MovieApp</a>
 
-            <div class="row row-cols-2 row-cols-md-4 row-cols-lg-6 g-3" id="movieRow">
+    <!-- Toggler Button for Mobile (Hamburger Menu) -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+        </button>
 
-                <% movies.forEach(movie => { %>
-                    
-                    <div class="col">
-    
-                        <div class="card h-100" id="movieCard"></div>
-    
-                    </div>
-    
-                <% }) %>
+        <div class="collapse navbar-collapse" id="navbarNav">
+      <!-- Main Navigation Links -->
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/">Home 🏠</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/movies-form">Add Movies 🎬</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/genre-form">Add Genre 👽</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/productionCompany-form">Add Production Company 🏢</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/actor-form">Add Actor 🎭</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/director-form">Add Director 🎞️</a>
+        </li>
+      </ul>
 
-            </div>
+      <!-- Right-aligned content (e.g., Search form, Login buttons) -->
+      <div class="d-flex">
+        <!-- Search Form -->
+        <form class="d-flex me-2" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search 🔎" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
 
+        <!-- Optional: Login/Signup or Profile links (use Bootstrap utilities for spacing) -->
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="/login">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link btn btn-primary text-white ms-2" href="/signup">Sign Up</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
 
-        </div>
-
-
+        <p class="text-center">
+            Welcome to my movie app where you can add your own movies too! 
+        </p>
 
     </main>
 

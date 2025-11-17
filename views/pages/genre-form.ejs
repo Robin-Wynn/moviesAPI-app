@@ -1,0 +1,44 @@
+<%- include('../partials/header') %>
+
+<main class="main" id="main">
+
+    <div class="container">
+        <h2 class="text-center text-capitalize">Add a Genre 👻</h2>
+
+        <form 
+            action="http://localhost:1995/genre-form" 
+            method="post"
+            class="form"
+            id="genreForm"    
+        >
+        
+            <div class="row mb-3">
+                <div class="col">
+                    <label 
+                        for="genre"    
+                        class="form-label">
+                        Genre:
+                    </label>
+                    <input 
+                        type="text" 
+                        name="genre" 
+                        id="genre"
+                        class="form-control"
+                    />
+                </div>
+                
+            </div>
+
+            <button 
+                class="btn btn-primary"
+                type="submit"
+                role="button"
+            >Add Genre</button>
+
+        </form>
+
+    </div>
+
+</main>
+
+<%- include('../partials/footer') %>
