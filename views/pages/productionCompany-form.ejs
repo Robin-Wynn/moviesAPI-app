@@ -6,7 +6,7 @@
         <h2 class="text-center text-capitalize">Add a Producer 🎥</h2>
 
         <form 
-            action="http://localhost:1995/productionCompany-form" 
+            action="http://localhost:1995/api/production/create" 
             method="post"
             class="form"
             id="productionCompanyForm"    
@@ -15,27 +15,14 @@
             <div class="row mb-3">
                 <div class="col">
                     <label 
-                        for="first_name"    
+                        for="production"    
                         class="form-label">
-                        First Name:
+                        Company Name:
                     </label>
                     <input 
                         type="text" 
-                        name="first_name" 
-                        id="first_name"
-                        class="form-control"
-                    />
-                </div>
-                <div class="col">
-                    <label 
-                        for="last_name"    
-                        class="form-label">
-                        Last Name:
-                    </label>
-                    <input 
-                        type="text" 
-                        name="last_name" 
-                        id="last_name"
+                        name="production" 
+                        id="production"
                         class="form-control"
                     />
                 </div>
@@ -45,7 +32,7 @@
                 class="btn btn-primary"
                 type="submit"
                 role="button"
-            >Add Actor</button>
+            >Add Production Company</button>
 
         </form>
 

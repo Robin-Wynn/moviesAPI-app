@@ -33,4 +33,22 @@ router.get('/:id', (req, res)=> {
     dao.findById(res, dao.table, req.params.id)
 })
 
+// POST 
+// http://localhost:1995/api/movie/create
+router.post('/create', (req, res)=> {
+    dao.create(req, res, dao.table)
+})
+
+// PATCH
+// http://localhost:1995/api/movie/update/1
+router.patch('/update/:id', (req, res)=> {
+    dao.update(req, res, dao.table)
+})
+
+// DANGER ZONE !!DELETE!!
+// http://localhost:1995/api/movie/delete/1
+router.delete('/delete/:id', (req, res)=> {
+    dao.delete(req, res, dao.table)
+})
+
 module.exports = router

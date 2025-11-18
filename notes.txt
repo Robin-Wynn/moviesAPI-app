@@ -1,3 +1,0 @@
-Using the movie-app that you were previously working on, add post and patch routes that will allow you to post actors, genres, directors, publishing companies, and movies. 
-
-Test out your routes in postman. Also, build a form for each endpoint to enter data. using ejs

@@ -4,7 +4,7 @@ const con = require('../config/dbconfig')
 const PORT = process.env.PORT || 1995
 
 // Home Page => http://localhost:1995
-router.get('/', async (req, res) => {
+router.get('/', (req, res) => {
 
     res.render('pages/home', {
         title: 'Movie App Home',
@@ -20,11 +20,11 @@ router.get('/actor-form', (req, res)=> {
         name: 'actor-form'
     })
 })
-// movies-form => http://localhost:1995/movies-form
-router.get('/movies-form', (req, res)=> {
-    res.render('pages/movies-form', {
-        title: 'movies-form',
-        name: 'movies-form'
+// director-form => http://localhost:1995/director-form
+router.get('/director-form', (req, res)=> {
+    res.render('pages/director-form', {
+        title: 'director-form',
+        name: 'director-form'
     })
 })
 // genre-form => http://localhost:1995/genre-form
@@ -41,6 +41,14 @@ router.get('/movies-form', (req, res)=> {
         name: 'movies-form'
     })
 })
+// productionCompany-form => http://localhost:1995/productionCompany-form
+router.get('/productionCompany-form', (req, res)=> {
+    res.render('pages/productionCompany-form', {
+        title: 'productionCompany-form',
+        name: 'productionCompany-form'
+    })
+})
+
 
 // // Forms 
 // router.get('/pages', (req, res)=> {
@@ -62,7 +70,7 @@ router.get('/movies-form', (req, res)=> {
 // ]
 
 // formEndpoints.forEach(formEndpoint => {
-//     router.use(`/pages/${formEndpoint}`, require(`../views/pages/${formEndpoint}`))
+//     router.use(`/${formEndpoint}`, require(`../views/pages/${formEndpoint}`))
 // })
 
 // root route 
@@ -93,7 +101,11 @@ endpoints.forEach(endpoint => {
 // Error handling
 router.use((req, res, next)=> {
 	res.status(404)
-	.send('<h1>404 Error this page does not exit</h1>')
+	// .send('<h1>404 Error this page does not exit</h1>')
+    .render('pages/error', {
+        title: 'Error Page',
+        name: 'Error'
+    })
 })
 
 
