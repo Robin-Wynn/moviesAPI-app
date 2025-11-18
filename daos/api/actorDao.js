@@ -19,7 +19,7 @@ const actorDao = {
 	  	     	m.movie_id,
 	  	      	m.title,
 	  	      	GROUP_CONCAT(DISTINCT CONCAT(a.first_name, ' ', a.last_name) SEPARATOR 	', ')	AS actors
-	  	    FROM movies m
+	  	    FROM movie m
 	  	    JOIN movie_to_actor mta ON m.movie_id = mta.movie_id
 	  	    JOIN actor a ON mta.actor_id = a.actor_id
 	  	    WHERE m.movie_id = ?
